@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" 8-all """
+""" 9-insert_school """
 
 
 def insert_school(mongo_collection, **kwargs):
