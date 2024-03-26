@@ -1,0 +1,4 @@
+// update a collection
+db.school.update({
+    "name": "Holberton school"
+})
