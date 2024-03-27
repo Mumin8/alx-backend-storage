@@ -47,20 +47,4 @@ class Cache:
         a method that gets the int
         '''
         return self.get(key, fn=lambda d: int(d))
-
-    def count_calls(method):
-        @wraps(method)
-        def wrapper(self, *args, **kwargs):
-            key = method.__qualname__
-            self._redis.incr(key)
-            return method(self, *args, **kwargs)
-        return wrapper
-
-    @count_calls
-    def store(self, data: Union[str, bytes, int, float]) -> str:
-        '''
-        a method that generate a random key
-        '''
-        key = str(uuid.uuid4())
-        self._redis.set(key, data)
-        return key
+        
